@@ -1,0 +1,38 @@
+﻿<ion-view title="" id="page6">
+    <ion-nav-buttons side="right" class="has-header">
+
+        <div class="button text-center" ng-click="vm.passDate()" style="padding:0px;margin: 2px -2px -4px 4px;padding-left: 2px;top:-3px;padding-right: 3px; color:black">
+            <img ng-src="img/cal.jpg" class=" title-image caption post-content" height="32" />         
+        </div>
+        <!--<button class="button button-positive" ng-click="vm.passDate()">Pass Date</button>-->
+        <div ng-repeat="date in  vm.dates" class="button text-center" style="padding:0px;margin: 2px -2px -4px 4px;padding-left: 2px;top:-3px;
+    padding-right: 3px; color:black" ng-class="{'button-positive': $index == vm.selectedIndex }"
+             ng-click="vm.clickDateEvent(date.dateValue,$index)">
+            <img ng-src="img/calendar.png" class=" title-image caption post-content" height="32" />
+
+            <div class="text" style="margin-top:-37px;">
+                <b> {{date.dateText}}</b>
+            </div>
+        </div>
+
+    </ion-nav-buttons>
+    <ion-content padding="true" class="has-header">
+        <div class="row plntname">
+            <div class="col text-center stable abc" ng-hide="vm.hidePlant">
+                <h3 class="stable">Bangalore</h3>
+            </div>
+        </div>
+
+        <div>
+            <div class="list text-center" ng-repeat="plant in vm.PlantData">
+                <div class="item item-divider item-icon-right">
+                    <!--ng-click="anchorClicked(plant.plantID);"-->
+                    <a href="#/side-menu21/plantMachineInfo/{{plant.plantID}}">
+                        <h1>{{plant.plantName}}</h1> <i class="icon ion-chevron-right"></i>
+                        <div><span>Connected Machines :</span> {{plant.machines.length}}</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

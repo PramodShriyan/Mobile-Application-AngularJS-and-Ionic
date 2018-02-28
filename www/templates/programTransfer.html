@@ -1,0 +1,66 @@
+﻿<ion-view title="" id="page77">
+    <ion-content padding="true" class="has-header ">
+        <div class="list pt">
+            <div class=" row item item-divider plntname ">
+                <div class="col col-50 text-left">
+                    <label class="item item-input lbl">
+                    <b>Plants :</b>
+                    </label>
+                </div>
+                <select class="item item-input text-center lbl col col-50" ng-options='option.plantID as option.plantName for option in vm.PlantData'
+                        ng-model='vm.selectedPlant' ng-change="vm.showSelectValue(vm.selectedPlant)" style="background-color:white"></select>                                 
+            </div>
+            <div class="row item item-divider plntname">
+                <div class="col col-50 text-left ">
+                    <label class="item item-input lbl">
+                        <b>Machines :</b>
+                    </label>
+                </div>
+                <select class="item item-input text-center lbl col col-50" style="background-color:white" 
+                        ng-options='option.machineID as option.machineName for option in vm.machineData.machines'
+                        ng-model='vm.selectedMachine'>
+                    <!--<option ng-repeat="j in vm.machineData.machines" value="{{j.machineID}}">
+                        {{j.machineName}}
+                    </option>-->
+                </select>
+            </div>
+            <div class="row item item-divider plntname">
+                <div class="col col-50 text-left">
+                    <label class=" item item-input lbl">
+                        <b>Program To Send:</b>
+                    </label>
+                </div>
+                <select class="item item-input text-center lbl col col-50" ng-model="vm.selected"
+                        ng-options='s as s for s in programNo' 
+                        style="background-color:white"></select>                                   
+            </div>          
+            <div class="row item item-divider req" style="background-color:white">
+                <div class="col col-50 text-right ">
+                    <div class="button button-positive setting" ng-click="insert()">
+                        Save
+                    </div>
+                </div>
+                <div class="col col-50 text-left">
+                    <div class="button button-positive setting" ng-click="view()">
+                        View
+                    </div>
+                    </div>
+                </div>
+        </div>
+        <div class="row headMT">
+            <div class="col col-10  text-center "><strong>ID</strong></div>
+            <div class="col col-25  text-center "><strong>Program No.</strong></div>
+            <div class="col  text-center "><strong>Request Time</strong></div>
+            <!--<div class="col col-15 text-center "><strong>Status</strong></div>-->
+            <div class="col col-15 text-center "><strong>Remarks</strong></div>
+            <div class="col text-center "><strong>Processed Time </strong></div>
+        </div>
+        <div class="row dataPT" ng-repeat=" pt in vm.ptData">
+            <div class="col col-10 text-center">{{pt.id}}</div>
+            <div class="col col-25 text-center  ">{{pt.programName}}</div>
+            <div class="col  text-center ">{{pt.reqTime | date:'dd MMM hh:mm'}}</div>
+            <div class="col  col-15  text-center ">{{pt.remarks}}</div>
+            <div class="col text-center ">{{pt.processTimeStamp | date:'dd MMM hh:mm'}}</div>
+        </div>
+    </ion-content>
+</ion-view>

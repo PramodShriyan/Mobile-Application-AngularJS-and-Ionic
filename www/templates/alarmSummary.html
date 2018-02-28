@@ -1,0 +1,81 @@
+<ion-view title="" id="page73" class="alarms">
+    <ion-nav-buttons side="right" class="has-header">
+
+        <div class="button text-center" ng-click="vm.passDate()" style="padding:0px;margin: 2px -2px -4px 4px;padding-left: 2px;top:-3px;padding-right: 3px; color:black">
+            <img ng-src="img/cal.jpg" class=" title-image caption post-content" height="32" />
+        </div>
+
+        <div ng-repeat="date in vm.getDates" class="button text-center" style="padding:0;margin: 2px -2px -4px 4px;padding-left: 2px;top:-3px;
+    padding-right: 3px; color:black" ng-class="{'button-positive': $index == vm.selectedIndexDate }"
+             ng-click="vm.clickDateEvent(date.dateValue,$index)">
+            <img ng-src="img/calendar.png" class=" title-image caption post-content" height="32" />
+
+            <div class="text" style="margin-top:-37px;">
+                <b> {{date.dateText}}</b>
+            </div>
+        </div>
+    </ion-nav-buttons>
+    <ion-content padding="true" class="has-header">
+        <div class="row plntname">
+            <div class="col text-center stable abc" ng-hide="vm.hidePlant">
+                <h3 class="stable">{{vm.plantName}}</h3>
+            </div>
+        </div>
+        <div class="row MachineMT">
+            <div class="col text-center selectMT">
+                <select class="select" ng-options='option.machineID as option.machineName for option in vm.machineData.machines'
+                        ng-model='vm.selectedValue' ng-change="vm.onMachineSelectionChange(vm.selectedValue)"></select>
+            </div>
+            <span ng-style="{background: vm.machineStatus.color}" class="status" ng-hide="vm.machineStatusHide == 1">
+                <b ng-style="vm.machineStatus.color === null && {'color': 'black'} || vm.machineStatus.color === '' && {'color': 'black'}|| vm.machineStatus.color !== 'Yellow' && {'color': 'white'} || vm.machineStatus.color === 'Yellow' && {'color': 'black'}">{{vm.machineStatus.status}}</b>
+            </span>
+        </div>
+        <div class="row shiftMT">
+            <!--<div class="col col-10 tgbtn text-center">
+                <button class="butcol button-small" ng-click="mTchart()"><i class="icon ion-information-circled" style="color:red"></i></button>
+            </div>-->
+            <div class="col col-50 text-left dname">
+                <!--<strong> Alarm For Shifts</strong>-->
+                <strong> Downtimes Summary</strong>
+            </div>
+            <div class="col button button-small  text-center shft selected-class-name"
+                 ng-class="{'button-positive': $index == vm.selectedIndex }"
+                 ng-click="vm.shiftButtonClick(shft.shiftId,$index)" ng-repeat="shft in vm.getShiftData">
+                {{shft.shiftName}}
+            </div>
+        </div>
+        <!--<div class="row headMT">
+            <div class="col text-left " style="padding-top:21px;"><strong>Alarm No : Message</strong></div>
+            <div class="col col-20 text-center "><strong>Last Seen</strong></div>
+            <div class="col col-20 text-center "><strong>No of Occ.</strong></div>
+        </div>-->
+
+        <div class="row headMT">
+            <div class="col  col-20 text-center "><strong>Down Code</strong></div>
+            <div class="col text-center "><strong>Down Reason</strong></div>
+            <div class="col col-20 text-center "><strong>Time Lost</strong></div>
+            <div class="col col-20 text-center "><strong>No of Occ.</strong></div>
+        </div>
+
+
+        <div class="row dataMT" ng-repeat="alarm in vm.alarmsSummary.details">
+            <!--<a class="col col-20 text-center" ui-sref="menu.alarmSolution({alarmNo:alarm.alarmNo})">-->
+            <div class="col col-20 text-center">
+                <!--{{alarm.alarmNo}} : {{alarm.message}}  <span class="icon ion-chevron-right" style="float:right;"></span>-->
+                {{alarm.downID}}
+                <!--<span class="icon ion-chevron-right" style="float:right;"></span>-->
+                <!--</a>-->
+            </div>
+            <div class="col text-center ">
+                {{alarm.downReason}}
+            </div>
+            <div class="col col-20  text-center ">
+                <!--<p> {{alarm.lastSeen | date:'dd-MMM' }} {{alarm.lastSeen | date:'hh:mma' | lowercase }}</p>-->
+                <p> {{alarm.downTime | date:'h:mm' | lowercase }}</p>
+            </div>
+            <div class="col col-20  text-center ">
+                <p> {{alarm.frequency}}</p>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

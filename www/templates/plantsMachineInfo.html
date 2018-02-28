@@ -1,0 +1,16 @@
+﻿
+<ion-view id="page7">
+    <ion-nav-buttons side="right" class="has-header">
+        <button class="button icon ion-ios-calendar-outline">19</button>
+        <button class="button   icon ion-ios-calendar-outline">18</button>
+        <button class="button  icon ion-ios-calendar-outline padding-right">17</button>
+        <!--<button class="button button-dark icon ion-android-home padding-left"></button>-->
+    </ion-nav-buttons>
+    <ion-content class="has-header" style="margin-top:5px;">
+        <!--padding="true"-->
+        <div class="list" ng-repeat="i in vm.PlantData">
+            <div class="item item-divider positive-bg"><h2 class="stable">{{i.plantName}}</h2></div>
+            <div class="item item-icon-right" ng-repeat="j in i.machines">  {{j.machineName}} <i class="icon ion-chevron-right icon-accessory" style="color:#000"></i></div>
+        </div>
+    </ion-content>
+</ion-view>

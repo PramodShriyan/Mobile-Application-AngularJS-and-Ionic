@@ -1,0 +1,43 @@
+﻿<ion-view title="" id="page74">
+    <ion-content padding="true" class="has-header">
+        <div class="list pt">
+            <div class="row item item-divider  plntname">
+                <ion-label style="padding:6px 0 0 4px;"><strong>From Date:</strong> </ion-label>
+                <input type="date"  class="light-bg" min="{{vm.minDate}}" max="{{vm.maxDate}}" ng-model="vm.fromDate" />
+            </div>
+            <div class="row item item-divider plntname">
+                <div class="row item item-divider  plntname">
+                    <ion-label style="padding:6px 0 0 4px;"><strong>To Date:</strong> </ion-label>
+                    <input type="date"  class="light-bg" min="{{vm.minDate}}" max="{{vm.maxDate}}" ng-model="vm.toDate" />
+                </div>
+            </div>
+            <div class="row item item-divider reqbtn" style="background-color:#FFFFFF">
+                <div class="col text-center  reqsave">
+                    <label class="item item-input text-center" style="border:0px;color:black">
+                        <button class="button button-positive setting" ng-click="vm.sync()">
+                            Sync
+                        </button>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div ng-show="sycResult">
+            <div class="row ">
+              <div class="col text-center"><h3>Sync Results</h3></div>  
+            </div>
+            <div class="row ">
+                <div class="col text-center"><h4>Success Results</h4></div>
+            </div>
+            <div class="row" ng-repeat="suc in syncSucc">
+              <div class="col text-center">{{suc}}</div>  
+            </div>
+
+            <div class="row ">
+                <div class="col text-center"><h4>Failed Results</h4></div>
+            </div>
+            <div class="row" ng-repeat="fail in synFail">
+                <div class="col text-center">{{fail}}</div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

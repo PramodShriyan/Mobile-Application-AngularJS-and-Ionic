@@ -1,0 +1,62 @@
+﻿<ion-side-menus enable-menu-with-back-views="true">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar bar-header bar-light">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+                <img ng-src="img/acemlogo.PNG" class="title-image" height="40" style="margin:-2px;" />
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="side-menu21"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" id="side-menu21">
+        <ion-header-bar class="bar bar-header bar-light">
+            <div class="title">Menu</div>
+        </ion-header-bar>
+        <ion-content padding="false" class="side-menu-left has-header">
+            <ion-list id="menu-list1">
+                <ion-item class="item-icon-right dark" id="menu-list-item6" ui-sref="menu.plants" menu-close="">
+                    Plants
+                    <i class="icon ion-home"></i>
+                </ion-item>
+                <ion-item class="item-icon-right dark" id="menu-list-item9" ui-sref="menu.setting" menu-close="" ng-controller="mainController as vm"
+                          ng-click="settingPage()">
+                    Settings
+                    <i class="icon ion-settings"></i>
+                </ion-item>
+                <!--<ion-item class="item-icon-right dark" id="menu-list-item6" ui-sref="menu.programTransfer" menu-close="" ng-controller="mainController as vm"
+                          ng-click="programTransferPage()">
+                    Program Transfer
+                    <i class="icon ion-code-working"></i>
+                </ion-item>-->
+
+                <ion-item class="item-icon-right dark" id="menu-list-item6" ui-sref="menu.syncData" menu-close="" ng-controller="mainController as vm"
+                          ng-click="syncDataPage()">
+                    Sync Data
+                    <i class="icon ion-android-sync"></i>
+                </ion-item>
+
+                <ion-toggle ng-click="vm.enableOffline()" ng-model="vm.Offline" ng-checked={{vm.Offline}} ng-controller="mainController as vm">
+                    Enable Offline
+                </ion-toggle>
+
+
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
+<ion-footer-bar class="bar-light" style="padding:0px;border-top:2px solid #45A8DF;color:black">
+    <div class="row footrow" style="padding:1px;">
+        <div class="col col-33" id="img2">
+            <img ng-src="img/AMIT_logo.png" class="title-image" height="45" alt="CompanyLogo" />
+        </div>
+        <div class="col footspan">
+            <span class="span" style="color:#6E6E6E">
+                Last Refreshed :{{getDatetime | date:'dd-MMM'}} {{getDatetime | date:'h:mma' | lowercase}}
+            </span><br />
+            <span class="span">
+                Powered By TPM-Trak<sup>®</sup>
+            </span>
+        </div>
+    </div>
+</ion-footer-bar>

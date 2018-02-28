@@ -1,0 +1,89 @@
+<ion-view title="" id="page2">
+    <ion-nav-buttons side="right" class="has-header">
+
+        <div class="button text-center" ng-click="vm.passDate()" style="padding:0px;margin: 2px -2px -4px 4px;padding-left: 2px;top:-3px;padding-right: 3px; color:black">
+            <img ng-src="img/cal.jpg" class=" title-image caption post-content" height="32" />
+        </div>
+        <div ng-repeat="date in vm.getDates" class="button text-center" style="padding:0px;margin: 2px -2px -4px 4px;padding-left: 2px;top:-3px;
+    padding-right: 3px; color:black" ng-class="{'button-positive': $index == vm.selectedIndexDate }"
+             ng-click="vm.clickDateEvent(date.dateValue,$index)">
+            <img ng-src="img/calendar.png" class=" title-image caption post-content" height="32" />
+            <!--<img src="../img/Calendar2.png" />-->
+            <div class="text" style="margin-top:-37px;">
+                <b> {{date.dateText}}</b>
+            </div>
+        </div>
+        <!--<div class="button  icon ion-ios-bell bell" ng-click="alarmPage()" style="min-width:34px;color:red;margin-left:8px;margin-right:-4px;height:35px;top:-2px;">
+            <span class="badge badge-dark bge" style="margin-left:-12px;display:inline-block">0</span>
+        </div>-->
+    </ion-nav-buttons>
+    <ion-content padding="true" class="has-header">
+        <div class="row plntname">
+            <div class="col text-center stable abc" ng-hide="vm.hidePlant">
+                <h3 class="stable">{{vm.plantName}}</h3>
+                <div class="button button-small icon ion-ios-bell bell" ng-click="alarmPage()" style="float:right;top:-36px;margin-right:0;margin-top:-2px;color:red;min-width:33px;">
+                </div>
+            </div>
+        </div>
+        <div class="row MachineMT">
+            <div class="col text-center selectMT">
+                <select class="select" ng-options='option.machineID as option.machineName for option in vm.machineData.machines'
+                        ng-model='vm.selectedValue' ng-change="vm.onMachineSelectionChange(vm.selectedValue)"></select>
+
+            </div>
+            <span ng-style="{background: vm.machineStatus.color}" class="status" ng-hide="vm.machineStatusHide == 1">
+                <b ng-style="vm.machineStatus.color === null && {'color': 'black'} || vm.machineStatus.color === '' && {'color': 'black'}|| vm.machineStatus.color !== 'Yellow' && {'color': 'white'} || vm.machineStatus.color === 'Yellow' && {'color': 'black'}">{{vm.machineStatus.status}}</b>
+            </span>
+        </div>
+        <div class="row shiftMT">
+            <div class="col col-50 text-left name">
+                <strong> Stoppages For Shifts</strong>
+            </div>
+            <div class="col button button-small  text-center shft selected-class-name"
+                 ng-class="{'button-positive': $index == vm.selectedIndex }"
+                 ng-click="vm.stoppageTimingShift(shft.shiftId,$index)" ng-repeat="shft in vm.getShiftData">
+                {{shft.shiftName}}
+            </div>
+        </div>
+
+
+
+        <div class="row headMT">
+            <!--<div class="col  text-left padding-vertical"><strong>From</strong></div>
+            <div class="col  text-center padding-vertical"><strong>To</strong></div>
+            <div class="col col-25 text-center padding-vertical"><strong>Duration</strong></div>-->
+            <div class="col  text-left padding-vertical">
+                <strong>
+                    <a href="" ng-click="orderByField='From-To'; reverseSort = !reverseSort">
+                        From-To <span ng-show="orderByField == 'From-To'"><span ng-show="!reverseSort"><i class="icon ion-android-arrow-up"></i></span><span ng-show="reverseSort"><i class="icon ion-android-arrow-down"></i></span></span>
+                </strong>
+
+                </a>
+            </div>
+            <div class="col  text-center padding-vertical">
+                <strong>
+                    <a href="" ng-click="orderByField='Reason'; reverseSort = !reverseSort">
+                        Reason <span ng-show="orderByField == 'Reason'"><span ng-show="!reverseSort"><i class="icon ion-android-arrow-up"></i></span><span ng-show="reverseSort"><i class="icon ion-android-arrow-down"></i></span></span>
+                    </a>
+                </strong>
+            </div>
+            <div class="col col-25 text-center padding-vertical">               
+                <strong>
+                    <a href="" ng-click="orderByField='duration'; reverseSort = !reverseSort">
+                        Duration <span ng-show="orderByField == 'duration'"><span ng-show="!reverseSort"><i class="icon ion-android-arrow-up"></i></span><span ng-show="reverseSort"><i class="icon ion-android-arrow-down"></i></span></span>
+                    </a>
+                </strong>
+            </div>
+        </div>
+        <div class="row dataMT" ng-repeat="downTime in vm.downTimeData.details|orderBy:orderByField:reverseSort">
+            <div class="col text-left">
+                <p> {{downTime.fromtime | date:'dd-MMM' }} {{downTime.fromtime | date:'hh:mma' | lowercase }}-</p><br />
+                <p> {{downTime.toTime | date:'dd-MMM' }} {{downTime.toTime | date:'hh:mma' | lowercase }}</p>
+            </div>
+            <div class="col text-center">
+                {{downTime.reason}}
+            </div>
+            <div class="col col-25 text-center"> <p>{{downTime.duration}}</p></div>
+        </div>
+    </ion-content>
+</ion-view>

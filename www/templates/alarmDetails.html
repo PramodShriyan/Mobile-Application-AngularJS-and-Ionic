@@ -1,0 +1,92 @@
+﻿<ion-view title="" id="page79" class="alarms">
+    <ion-nav-buttons side="right" class="has-header"> 
+
+        <div class="button text-center" ng-click="vm.passDate()" style="padding:0px;margin: 2px -2px -4px 4px;padding-left: 2px;top:-3px;padding-right: 3px; color:black">
+            <img ng-src="img/cal.jpg" class=" title-image caption post-content" height="32" />
+        </div>
+
+        <div ng-repeat="date in vm.getDates" class="button text-center" style="padding:0px;margin: 2px -2px -4px 4px;padding-left: 2px;top:-3px;
+    padding-right: 3px; color:black" ng-class="{'button-positive': $index == vm.selectedIndexDate }"
+             ng-click="vm.clickDateEvent(date.dateValue,$index)">
+            <img ng-src="img/calendar.png" class=" title-image caption post-content" height="32" />
+
+            <div class="text" style="margin-top:-37px;">
+                <b> {{date.dateText}}</b>
+            </div>
+        </div>
+
+    </ion-nav-buttons>
+    <ion-content padding="true" class="has-header">
+        <div class="row plntname">
+            <div class="col text-center stable abc" ng-hide="vm.hidePlant">
+                <h3 class="stable">{{vm.plantName}}</h3>
+            </div>
+        </div>
+        <div class="row MachineMT">
+            <div class="col text-center selectMT">
+                <select class="select" ng-options='option.machineID as option.machineName for option in vm.machineData.machines'
+                        ng-model='vm.selectedValue' ng-change="vm.onMachineSelectionChange(vm.selectedValue)"></select>
+            </div>
+            <span ng-style="{background: vm.machineStatus.color}" class="status" ng-hide="vm.machineStatusHide == 1">
+                <b ng-style="vm.machineStatus.color === null && {'color': 'black'} || vm.machineStatus.color === '' && {'color': 'black'}|| vm.machineStatus.color !== 'Yellow' && {'color': 'white'} || vm.machineStatus.color === 'Yellow' && {'color': 'black'}">{{vm.machineStatus.status}}</b>
+            </span>
+        </div>   
+        <div class="row shiftMT">
+            <div class="col col-10 tgbtn text-center">
+                <button class=" butcol button-small" ng-click="mTchart()"><i class="icon  ion-help-circled" style="color:red"></i></button>
+            </div>
+            <div class="col col-50 text-left dname">
+                <strong>Alarm For Shifts</strong>
+            </div>
+            <div class="col button button-small  text-center shft selected-class-name"
+                 ng-class="{'button-positive': $index == vm.selectedIndex }"
+                 ng-click="vm.shiftButtonClick(shft.shiftId,$index)" ng-repeat="shft in vm.getShiftData">
+                {{shft.shiftName}}
+            </div>
+        </div>
+        <div class="alm card" ng-repeat="alarm in vm.alarmData.details" style="margin:4px;padding:0 4px 0 4px;">
+            <div class="row row-no-padding">
+                <div class="col">
+                    <h6><strong>{{alarm.alarmNo}} : {{alarm.message}}</strong></h6>
+                </div>
+            </div>
+            <div class="row row-no-padding">
+                <div class="col col-33">
+                    <b>
+                        From :
+                    </b>
+                </div>
+                <div class="col col-33">
+                    <b>
+                        To :
+                    </b>
+                </div>
+                <div class="col"><b>Duration</b></div>
+            </div>
+
+            <div class="row row-no-padding">
+                <div class="col col-33">
+                    {{alarm.startTime | date:'dd-MMM' }} {{alarm.startTime | date:'h:mma'|lowercase }}
+                </div>
+                <div class="col col-33">
+                    {{alarm.endTime |  date:'dd-MMM' }} {{alarm.endTime | date:'h:mma'|lowercase }}
+                </div>
+                <div class="col">{{alarm.duration}}</div>
+            </div>
+        </div>
+        <div class="card almr">
+            <div class="row ">
+                <div class="col col-50 text-left">
+                    <strong>
+                        Shift Count : {{vm.alarmData.shiftCount}}
+                    </strong>
+                </div>
+                <div class="col col-50 text-center">
+                    <strong>
+                        Total Duration : {{vm.alarmData.totalDuration}}
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

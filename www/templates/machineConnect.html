@@ -1,0 +1,101 @@
+<ion-view title="" id="page1">
+    <ion-nav-buttons side="right" class="has-header">
+        <div ng-controller="mainController as vm">
+            <button class="button icon ion-ios-calendar-outline" ng-repeat="dt in vm.dates">{{dt}}</button>
+        </div>
+        <!--<button class="button button-dark icon ion-android-home padding-left"></button>-->
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <!--<div class="row row-no-padding">
+            <div class="col">
+                    <button class="button button-dark icon ion-ios-calendar-outline">19</button>
+                    <button class="button button-dark    icon ion-ios-calendar-outline">18</button>
+                    <button class="button  button-dark icon ion-ios-calendar-outline padding-right">17</button>
+                </div>
+            <div class="col text-center positive">
+                <select style="font-size:22px;border-width:0;font-weight:bold;">
+                    <option>ACE-1</option>
+                    <option>ACE-2</option>
+                    <option>ACE-3</option>
+                </select>
+            </div>
+        </div>-->
+        <div class="row plntname">
+            <div class="col text-center stable abc" style="background-color:#cc6600;">
+                <h3 class="stable">Plant Name</h3>
+            </div>
+        </div>
+        <div class="row MachineMT">
+            <div class="col text-center selectMT">
+                <select class="select stable" style="padding-top:0;">
+                    <option>Machine-1</option>
+                    <option>Machine-2</option>
+                    <option>Machine-3</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-50  text-center stable" style="font-size:20px;background-color:#35ff67;color:black; height:80px;">
+
+                <p><b> PART COUNT</b></p>
+                <p><span class="stable dark">22</span></p>
+
+
+            </div>
+            <div class="col  text-center stable" style="font-size:20px;background-color:#35ff67;color:black;height:80px;">
+                <p>
+                    <b>
+                        DOWN TIME
+                    </b>
+                </p>
+                <p> <span class="stable dark">02:32</span></p>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-50 text-left stable " style="background-color:#ffffaf;color:black;height:60px;"><p>DETAILS</p></div>
+            <div class="col  text-center stable" style="background-color:#ffffaf;color:black;height:60px;"><p> SHIFT1</p></div>
+            <div class="col  text-center stable" style="background-color:#ffffaf;color:black;height:60px;"><p>SHIFT2</p></div>
+            <div class="col  text-center stable" style="background-color:#ffffaf;color:black;height:60px;"><p>SHIFT3</p></div>
+        </div>
+        <div class="row ">
+            <div class="col col-50 text-left stable" style="background-color:#ffffaf;color:black;"><p>PART COUNT</p></div>
+            <div class="col text-center stable" style="background-color:white;color:black;"> <p> 34 </p></div>
+            <div class="col text-center stable" style="background-color:white;color:black;"><p>24 </p></div>
+            <div class="col text-center stable" style="background-color:white;color:black;"><p>14</p></div>
+        </div>
+        <div class="row ">
+            <div class="col  col-50 text-left stable " style="background-color:#ffffaf;color:black;"><p>TOTAL TIME</p></div>
+            <div class="col  text-center stable" style="background-color:white;color:black;"><p>03:12</p></div>
+            <div class="col text-center stable" style="background-color:white;color:black;"><p>01:32</p></div>
+            <div class="col  text-center stable" style="background-color:white;color:black;"><p>02:45</p></div>
+        </div>
+        <div class="row ">
+            <div class="col  col-50 text-left stable" style="background-color:#ffffaf;color:black;"><p>POWER ON TIME</p></div>
+            <div class="col  text-center stable" style="background-color:white;color:black;"><p>02:12</p></div>
+            <div class="col  text-center stable" style="background-color:white;color:black;"><p>04:32</p></div>
+            <div class="col  text-center stable" style="background-color:white;color:black;"><p>01:45</p></div>
+        </div>
+        <div class="row ">
+            <div class="col  col-50 text-left stable " style="background-color:#ffffaf;;color:black;"><p>OPERATING TIME</p></div>
+            <div class="col  text-center stable" style="background-color:white;color:black;"><p>02:12</p></div>
+            <div class="col  text-center stable" style="background-color:white;color:black;"><p>04:32</p></div>
+            <div class="col  text-center stable" style="background-color:white;color:black;"><p>01:45</p></div>
+        </div>
+        <div class="row">
+            <div class="col col-50 text-left stable " style="background-color:#ffffaf;color:black;">
+                <p> CUTTING TIME</p>
+            </div>
+            <div class="col  text-center stable" style="background-color:white;color:black;"><p>02:12</p></div>
+            <div class="col  text-center stable" style="background-color:white;color:black;"><p>04:32</p></div>
+            <div class="col   text-center stable" style="background-color:white;color:black;"><p>01:45</p></div>
+        </div>
+        <div class="row  assertive cvb">
+            <div class="col col-50  text-left stable" style="background-color:#ffffaf;color:black;"><p>STOPPAGES</p></div>
+            <div class="col  text-center stable" style="background-color:white;color:black;"><p>02:12</p></div>
+            <div class="col  text-center stable" style="background-color:white;color:black;"><p>04:32</p></div>
+            <div class="col  text-center stable" style="background-color:white;color:black;"><p>01:45</p></div>
+        </div>
+    </ion-content>
+</ion-view>

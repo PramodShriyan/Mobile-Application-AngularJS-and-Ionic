@@ -1,0 +1,81 @@
+﻿<ion-view title="" id="page44">
+    <ion-nav-buttons side="right" class="has-header">
+
+        <div class="button text-center" ng-click="vm.passDate()" style="padding:0px;margin: 2px -2px -4px 4px;padding-left: 2px;top:-3px;padding-right: 3px; color:black">
+            <img ng-src="img/cal.jpg" class=" title-image caption post-content" height="32" />
+        </div>
+
+        <div ng-repeat="date in vm.getDates" class="button text-center" style="padding:0;margin: 2px -2px -4px 4px;padding-left: 2px;top:-3px;
+    padding-right: 3px; color:black" ng-class="{'button-positive': $index == vm.selectedIndexDate }"
+             ng-click="vm.clickDateEvent(date.dateValue,$index)">
+            <img ng-src="img/calendar.png" class=" title-image caption post-content" height="32" />
+
+            <div class="text" style="margin-top:-37px;">
+                <b> {{date.dateText}}</b>
+            </div>
+        </div>
+        <!--<div class="button  icon ion-calculator bell" ng-click="vm.partcntpage()" style="min-width:34px;color:red;margin-left:8px;margin-right:-4px;height:35px;top:-2px;">
+        </div>-->
+    </ion-nav-buttons>
+    <ion-content padding="true" class="has-header">
+        <div class="row plntname">
+            <div class="col text-center stable abc" ng-hide="vm.hidePlant">
+                <h3 class="stable">{{vm.plantName}}</h3>
+                <div class="button button-small icon ion-ios-bell bell" ng-click="alarmPage()" style="float:right;top:-36px;margin-top:-2px;color:red;min-width:33px;margin-right:0;">
+                </div>
+                <div class="button button-small icon ion-calculator bell" ng-click="vm.partcntpage()" style="float:right;top:-36px;margin-right:2px;margin-top:-2px;color:red;min-width:33px;">
+                </div>
+            </div>
+        </div>
+        <div class="row MachineMT">
+            <div class="col text-center selectMT">
+                <select class="select" ng-options='option.machineID as option.machineName for option in vm.machineData.machines'
+                        ng-model='vm.selectedValue' ng-change="vm.onMachineSelectionChange(vm.selectedValue,$index)"></select>
+            </div>
+            <span ng-style="{background: vm.machineStatus.color}" class="status" ng-hide="vm.machineStatusHide == 1">
+                <b ng-style="vm.machineStatus.color === null && {'color': 'black'} || vm.machineStatus.color === '' && {'color': 'black'}|| vm.machineStatus.color !== 'Yellow' && {'color': 'white'} || vm.machineStatus.color === 'Yellow' && {'color': 'black'}">{{vm.machineStatus.status}}</b>
+            </span>
+        </div>
+        <div class="row  statisticHead" style="margin-top:0;padding-bottom:12px;">
+            <div class="col" style="padding-bottom: 0px;padding-top: 2px;margin-bottom: -10px;background-color:#BDC0BF; border-radius: 4px 4px 4px 4px;">
+                <div class="row">
+                    <div class="col button button-small shftstat text-center selected-class-name"
+                         ng-repeat="shft in vm.getShiftData"
+                         ng-click="vm.statisticShift(shft.shiftId,$index)"
+                         ng-class="{'button-positive': $index == vm.selectedIndex }">
+                        {{shft.shiftName}}
+                    </div>
+                </div>
+            </div>
+            <div class="col text-center " style="background-color:#BDC0BF;" ><strong>Cycle</strong></div>
+            <div class="col text-center " style="background-color:#BDC0BF;"><strong>Load</strong></div>
+        </div>
+        <div class="dataMT" ng-repeat="stat in vm.statistics.statisticDataDetails">
+            <div class="row dataMT">
+                <div class="col text-left">
+                    <strong>{{stat.component}}&nbsp;({{stat.operationNo}})</strong>
+                </div>
+            </div>
+            <div class="row dataMT">
+                <div class="col">Std.</div>
+                <div class="col text-center">{{stat.statcycleTime[0].stdCycleTime}}</div>
+                <div class="col text-center">{{stat.statLoadUnload[0].stdLoadUnload}}</div>
+            </div>
+            <div class="row dataMT">
+                <div class="col">Avg.</div>
+                <div class="col text-center">{{stat.statcycleTime[0].avgCycleTime}}</div>
+                <div class="col text-center">{{stat.statLoadUnload[0].avgLoadUnload}}</div>
+            </div>
+            <div class="row dataMT">
+                <div class="col">Min.</div>
+                <div class="col text-center">{{stat.statcycleTime[0].minCycleTime}}</div>
+                <div class="col text-center">{{stat.statLoadUnload[0].minLoadUnload}}</div>
+            </div>
+            <div class="row dataMT">
+                <div class="col">Max.</div>
+                <div class="col text-center">{{stat.statcycleTime[0].maxCycleTime}}</div>
+                <div class="col text-center">{{stat.statLoadUnload[0].maxLoadUnload}}</div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

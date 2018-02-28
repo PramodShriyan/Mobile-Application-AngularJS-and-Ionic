@@ -1,0 +1,71 @@
+<ion-view id="page45">
+    <ion-nav-buttons side="right">
+
+      
+        <div class="button text-center" ng-click="vm.passDate()" style="padding:0px;margin: 2px -2px -4px 4px;padding-left: 2px;top:-3px;padding-right: 3px; color:black">
+            <img ng-src="img/cal.jpg" class=" title-image caption post-content" height="32" />
+        </div>
+
+        <div ng-repeat="date in vm.getDates" class="button text-center" style="padding:0px;margin: 2px -2px -4px 4px;padding-left: 2px;top:-3px;
+    padding-right: 3px; color:black" ng-class="{'button-positive': $index == vm.selectedIndex }"
+             ng-click="vm.clickDateEvent(date.dateValue,$index)">
+            <img ng-src="img/calendar.png" class=" title-image caption post-content" height="32" />
+
+            <div class="text" style="margin-top:-37px;">
+                <b>{{date.dateText}}</b>
+            </div>
+        </div>
+        <!--<div class="button  icon ion-ios-bell bell" ng-click="alarmPage()" style="min-width:34px;color:red;margin-left:8px;margin-right:-4px;height:35px;top:-2px;">
+            <span class="badge badge-dark bge" style="margin-left: -12px;display:inline-block">0</span>
+        </div>-->
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="row plntname">
+            <div class="col text-center stable abc" ng-hide="vm.hidePlant">
+                <h3 class="stable">{{vm.plantName}}</h3>
+                
+                <div class="button button-small icon ion-ios-bell bell" ng-click="alarmPage()" style="float:right;top:-36px;margin-right:0;margin-top:-2px;color:red;min-width:33px;">
+                </div>
+
+            </div>
+        </div>
+        <div class="row MachineMT">
+            <div class="col text-center selectMT">
+                <select class="select" ng-options='option.machineID as option.machineName for option in vm.machineData.machines'
+                        ng-model='vm.selectedValue' ng-change="vm.onChange(vm.selectedValue)"></select>
+            </div>
+            <span ng-style="{background: vm.machineStatus.color}" class="status blink" ng-hide="vm.machineStatusHide == 1">
+                <b ng-style="vm.machineStatus.color === null && {'color': 'black'} || vm.machineStatus.color === '' && {'color': 'black'}|| vm.machineStatus.color !== 'Yellow' && {'color': 'white'} || vm.machineStatus.color === 'Yellow' && {'color': 'black'}">{{vm.machineStatus.status}}</b>
+            </span>
+        </div>
+        <div class="row mainhdparts">
+            <div class="col pc col-50 text-center ">
+                <b>
+                    Part Count<br />
+                    <span class="positive"> {{vm.DashboardData.partCount}}</span>
+                </b>
+            </div>
+            <div class="col dt text-center ">
+                <b>
+                    Down Time<br />
+                    <span class="assertive">{{vm.DashboardData.downTime}}</span>
+                </b>
+            </div>
+        </div>
+        <div class="row shiftMT">
+            <div class="col col-50 text-left name">
+                <strong> Details For Shifts</strong>
+            </div>
+            <div class="col  text-center Shift" ng-repeat="shift in vm.getShiftData" style="padding-top:12px;">
+                {{shift.shiftName}}
+            </div>
+        </div>
+        <div class="row dataMT" ng-repeat="data in vm.DashboardData.dashboardDetails">
+            <div ng-click="gotoPage(data.navId)" class="col colHeader pn col-50  text-left ">
+                <strong>{{data.colHeaderText}}</strong>
+                <span class="icon  ion-chevron-right" style="float:right;"></span>
+            </div>
+            <div class="col value text-center" ng-repeat="count in data.shiftData  track by $index">{{count}}</div>
+        </div>
+    </ion-content>
+</ion-view>

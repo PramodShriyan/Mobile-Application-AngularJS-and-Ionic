@@ -1,0 +1,43 @@
+﻿<ion-view title="" id="page47">
+    <!--<ion-nav-buttons side="right" class="has-header">
+        <div class="button icon ion-ios-calendar-outline" ng-repeat="date in vm.getDates"
+             ng-class="{'button-positive': $index == vm.selectedIndexDate }">
+            {{date.dateText}}
+        </div>
+    </ion-nav-buttons>-->
+
+    <ion-content padding="true" class="has-header">
+        <!--<div class="row plntname">
+            <div class="col text-center stable abc">
+                <h3>{{vm.plantName}}</h3>
+            </div>
+        </div>-->
+        <!--<div class="row MachineMT">
+            <div class="col text-center selectMT">
+                <select class="select" ng-options='option.machineID as option.machineName for option in vm.machineData.machines'
+                        ng-model='vm.selectedValue'></select>
+            </div>
+        </div>-->
+        <div ng-repeat="value in vm.alrmSolutionData">
+            <div class="row headMT">
+                <div class="col col-20 text-left"><strong>Sl.No.</strong></div>
+                <div class="col  text-left "><strong>Cause</strong></div>
+                <div class="col text-left "><strong>Solution</strong></div>
+            </div>
+
+            <div class="row dataMT">
+                <div class="col col-20 text-left">{{$index+1}}</div>
+                <div class="col text-left ">{{value.cause}}</div>
+                <div class="col text-left">{{value.solution}}</div>
+            </div>
+            <div class="card img" style="padding:2px;margin:2px;">
+                <img id="myImg" ng-src="img/{{value.mtb}}/Alarms/{{value.alarmNo}}/{{value.alarmNo}}_{{$index+1}}.png"
+                     onerror="this.onerror = null;this.src = 'img/ImageNotFound.png';" class="full-image" height="200" style="padding:5px;"/><!--ng-click="open($index+1,value.alarmNo,value.mtb)"-->
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01" ng-src="{{vm.modalImg}}" onerror="this.onerror = null; this.src = 'img/ImageNotFound.png';"> 
+        </div>
+    </ion-content>
+</ion-view><!--onerror="this.onerror = null; this.src = '../img/ImageNotFound.png';"-->

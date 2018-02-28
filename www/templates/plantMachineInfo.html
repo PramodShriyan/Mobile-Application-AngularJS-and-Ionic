@@ -1,0 +1,51 @@
+﻿<ion-view id="page9">
+    <ion-nav-buttons side="right" class="has-header">
+
+
+        <div class="button text-center" ng-click="vm.passDate()" style="padding:0px;margin: 2px -2px -4px 4px;padding-left: 2px;top:-3px;padding-right: 3px; color:black">
+            <img ng-src="img/cal.jpg" class=" title-image caption post-content" height="32" />
+        </div>
+
+        <div ng-repeat="date in  vm.dates" class="button text-center" style="padding:0px;margin: 2px -2px -4px 4px;padding-left: 2px;top:-3px;
+    padding-right: 3px; color:black" ng-class="{'button-positive': $index == vm.selectedIndex }"
+             ng-click="vm.clickDateEvent(date.dateValue,$index)">
+            <img ng-src="img/calendar.png" class=" title-image caption post-content" height="32" />
+
+            <div class="text" style="margin-top:-37px;">
+                <b> {{date.dateText}}</b>
+            </div>
+        </div>
+
+
+    </ion-nav-buttons>
+    <ion-content padding="true" class="has-header">
+        <div class="row plntname">
+            <div class="col text-center stable abc">
+                <h3 class="stable">{{vm.plantData.plantName}}</h3>
+            </div>
+        </div>
+        <div class="list" ng-repeat="j in vm.plantData.machines">
+            <a hrefinappbrowser ui-sref="menu.dashboard({PlantId:vm.plantData.plantID ,machineId :j.machineID})">
+                <div class="item item-icon-right row">
+                    <div class="col col-50 text-center" style="color:black">
+                        <div class="item" ng-style="{background: j.color}">
+                            <p style="font-size:20px;">
+                                <b ng-style="j.color === null && {'color': 'black'} || j.color === '' && {'color': 'black'}
+                                   || j.color !== 'Yellow' && {'color': 'white'} || j.color === 'Yellow' && {'color': 'black'}">
+                                    {{j.machineName}}
+                                </b>
+                            </p>
+                        </div>
+                        &nbsp;<span ng-hide="vm.machineStatusHide == 1">{{j.status}}</span><!--$index-->
+                    </div>
+                    <div class="col col-50 text-left status">
+                        <p>Last Run Part :&nbsp;<strong>{{j.lastProgram}}</strong></p>
+                        <p>Part Count :&nbsp;<strong>{{j.partsCount}}</strong></p>
+                        <p>Down Time :&nbsp;<strong>{{j.downtime}}</strong></p>
+                    </div>
+                    <i class="icon ion-chevron-right icon-accessory" style="color:#000"></i>
+                </div>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
