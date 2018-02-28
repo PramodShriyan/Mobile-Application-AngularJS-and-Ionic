@@ -1,0 +1,674 @@
+﻿/* Empty. Add your own CSS if you like */
+body, html {
+    font-family: 'Segoe UI';
+    font-weight: 500;
+    /*background-color:#FAFAFA;*/
+    height:100%;
+    width:100%;
+}
+.statisticHead .shftstat{
+    padding-top:6px;
+    padding-bottom:6px;
+}
+.popup-body{
+    height:376px;
+    width:100%;
+}
+strong {
+    font-size: 16px;
+    font-family: 'Segoe UI';
+}
+
+ion-view, .pane, .view {
+    background-color: #FAFAFA;
+}
+
+a {
+    text-decoration: none;
+}
+
+.col {
+    /*height:47px ;*/
+    padding-top: 12px;
+    padding-bottom: 12px;
+    height: auto;
+    /*border-radius: 4px 4px 4px 4px;*/
+    /*margin: 2px;*/
+}
+
+.padding {
+    padding: 0px;
+}
+
+.has-footer {
+    bottom: 56px;
+}
+
+.DataColor {
+    background-color: #ffffc6;
+    color: black;
+}
+
+.HederColor {
+    background-color: #08367f;
+    color: white;
+}
+
+.DataColor3 {
+    background-color: #ffffc6;
+    color: black;
+}
+
+.plntname {
+    padding-bottom: 5px;
+}
+
+    .plntname .abc {
+        height: 34px;
+        padding: 2px;
+        /*background-color: #45A8DF;*/
+        background-color: #2773B0;
+        color: white;
+    }
+
+.HederColor3 {
+    background-color: #08367f;
+    color: white;
+}
+
+body, html {
+    font-family: 'Segoe UI';
+}
+
+.row {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+#img {
+    background-image: url('../img/AMIT_logo.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+.but {
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+    .but .button {
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+.button-bar > .button {
+    padding: 4px 16px;
+}
+
+
+.ion-header-bar {
+    background-color: RGB(49, 49, 49);
+}
+
+.bar-header {
+    background-color: RGB(49, 49, 49);
+}
+
+.dataMT .col {
+    background-color: #EEEEEE;
+    border-radius: 4px 4px 4px 4px;
+    margin: 1.5px;
+}
+
+.dataPT .col {
+    background-color: #EEEEEE;
+    border-radius: 4px 4px 4px 4px;
+    margin: 1.5px;
+}
+
+.dataMT .colHeader {
+    background-color: #EEEEEE;
+    border-radius: 4px 4px 4px 4px;
+    margin: 1.5px;
+    color: dodgerblue;
+    /*text-decoration:underline;*/
+}
+
+/*.headMT {
+    padding-top: 5px;
+}*/
+
+.headMT .col {
+    background-color: #BDC0BF;
+    border-radius: 4px 4px 4px 4px;
+    margin: 1.5px;
+}
+.statisticHead .col{
+    
+    border-radius: 4px 4px 4px 4px;
+    margin:-4px 2.5px -10px -0.5px;
+}
+
+.shiftMT .Name {
+    background-color: #45A8DF;
+    padding-top: 12px;
+    padding-bottom: 0px;
+    border-radius: 0 4px 4px 0;
+    margin: 1.5px 1.5px 1.5px 0;
+}
+
+.shiftMT .head {
+    background-color: #45A8DF;
+    padding-top: 8px;
+    padding-bottom: 4px;
+    border-radius: 4px 4px 4px 4px;
+    margin: 1.5px 1.5px 1.5px 1.5px;
+}
+
+.shiftMT .name {
+    background-color: #45A8DF;
+    /*padding-top: 10px;
+    padding-bottom: 4px;*/
+    /*border-radius: 4px 4px 4px 4px;
+     margin: 1.5px 1.5px 1.5px 1.5px;*/
+    border-radius: 4px 4px 4px 4px;
+    margin: 1.5px 1.5px 1.5px 1.5px;
+}
+
+.shiftMT .dname {
+    background-color: #45A8DF;
+    border-radius: 0 4px 4px 0;
+    margin: 1.5px 1.5px 1.5px 0;
+}
+
+
+.shiftTot .col {
+    background-color: #45A8DF;
+    border-radius: 4px 4px 4px 4px;
+    margin: 1.5px 1.5px 1.5px 1.5px;
+}
+
+
+.shiftMT .tgbtn {
+    background-color: #45A8DF;
+    margin-left: 1.5px;
+    border-radius: 4px 0 0 4px;
+    margin: 1.5px 0 1.5px 1.5px;
+    padding-top: 7px;
+    padding-bottom: 4px;
+}
+
+.shiftMT .tgbtnpc {
+    background-color: #45A8DF;
+    border-radius: 4px 0 0 4px;
+    margin: 1.5px 0 1.5px 1.5px;
+    padding-top: 12px;
+    padding-bottom: 0px;
+}
+
+.shiftMT {
+    padding-top: 0px;
+}
+
+    .shiftMT .Shift {
+        background-color: #BDC0BF;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 0px;
+        padding-right: 0px;
+        border-radius: 4px 4px 4px 4px;
+        margin: 1.5px;
+    }
+
+    .shiftMT .shft {
+        padding-top: 8px;
+        padding-bottom: 4px;
+        padding-left: 0px;
+        padding-right: 0px;
+        border-radius: 4px 4px 4px 4px;
+        margin: 1.5px;
+    }
+
+    .shiftMT .shftd {
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 0px;
+        padding-right: 0px;
+        border-radius: 4px 4px 4px 4px;
+        margin: 1.5px;
+    }
+
+    .shiftMT .shftmt {
+        padding-top: 8px;
+        padding-bottom: 4px;
+        padding-left: 0px;
+        padding-right: 0px;
+        border-radius: 4px 4px 4px 4px;
+        margin: 1.5px;
+    }
+
+.has-footer {
+    top: 39px;
+    bottom: 40px;
+}
+
+.MachineMT .selectMT {
+    background-color: #FFFFFF;
+    padding-top: 0px;
+    margin: 0;
+    padding-bottom: 2px;
+}
+
+.MachineMT {
+    padding-bottom: 0px;
+    background-color: #FFFFFF;
+}
+
+    .MachineMT .status {
+        margin-top: 3px;
+        margin-bottom: 8px;
+        margin-right: 3px;
+        padding-top: 6px;
+        padding-right: 11px;
+        padding-left: 11px;
+        font-size: 17px;
+        border: 1px solid #C0C0C0;
+    }
+
+.selectMT .select {
+    font-size: 32px;
+    border-width: 0;
+    font-weight: 500;
+    max-width: 200px;
+    background-color: #FFFFFF;
+    /*padding-left: 75px;
+  
+    text-indent: 1px;
+    
+    -webkit-appearance: none;
+    width: 217px;
+    -moz-appearance: none;
+    background: transparent url('../img/br_down.png') no-repeat 200px center; 
+    background-position-x:right;*/
+}
+
+.headparts .col {
+    background-color: #BDC0BF;
+    padding-top: 9px;
+    height: 58px;
+}
+
+.dataparts .value {
+    background-color: #EEEEEE;
+    height: 58px;
+    padding-top: 17px;
+}
+
+.dataparts .pn {
+    background-color: #BDC0BF;
+    height: 58px;
+    padding-top: 19px;
+}
+
+.mainhdparts {
+    padding-top: 2px;
+    padding-bottom: 6px;
+}
+
+    .mainhdparts .pc {
+        font-size: 18px;
+        margin-left: 1.5px;
+        background-color: #FAFAFA;
+        padding-top: 14px;
+        height: 65px;
+        margin-right: 2px;
+        border: 1px solid grey;
+        border-radius: 4px 4px 4px 4px;
+    }
+
+    .mainhdparts .dt {
+        font-size: 18px;
+        margin-right: 1.5px;
+        background-color: #FAFAFA;
+        padding-top: 14px;
+        height: 65px;
+        border: 1px solid gray;
+        border-radius: 4px 4px 4px 4px;
+    }
+
+.foot {
+    padding: 0;
+    margin: 0px;
+}
+
+    .foot .footrow {
+        padding: 1px;
+        margin: 0px;
+    }
+
+.footrow .col {
+    padding: 0;
+    margin: 0px;
+}
+
+.footspan .span {
+    padding-top: 0;
+    float: right;
+}
+/*.shiftPT .col{
+     padding-top:10px;
+ }*/
+/*.alarms .disc {
+    padding-top: 8px;
+}*/
+
+.alarms .Name {
+    padding-top: 8px;
+}
+
+.list {
+    margin-bottom: 0px;
+}
+
+.item:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.item:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.btnbr {
+    min-height: 27px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.selected-class-name {
+    color: white;
+    background-color: #45A8DF;
+    border-radius: 5px;
+}
+
+.dataMT p {
+    margin: 0;
+}
+
+.pt .col {
+    padding: 0px;
+}
+
+.back-button > .back-text > .default-title {
+    display: none;
+}
+
+.input-label {
+    padding: 0px 10px 0px 0px;
+}
+
+.lbl {
+    font-size: 19px;
+    font-weight: 400;
+    color: black;
+}
+
+    .lbl .select {
+        font-size: 20px;
+        font-weight: 400;
+    }
+/*.pt .item{
+    border-right:0px;
+    border-left:0px;
+}*/
+
+.reqbtn {
+    background-color: #FFFFFF;
+    padding-bottom: 0px;
+}
+
+    .reqbtn .req {
+        padding-left: 0px;
+        border: 0px;
+        margin-left: 108px;
+    }
+
+    .reqbtn .reqq {
+        padding-left: 0px;
+        border: 0px;
+        margin-right: 112px;
+    }
+
+    .reqbtn .reqsave {
+        padding-left: 141px;
+        border: 0px;
+    }
+
+.req .col {
+    padding-top: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.alm {
+    margin-bottom: 3px;
+    margin-left: 1.5px;
+    margin-right: 1.5px;
+    margin-top: 3px;
+    border-radius: 4px 4px 4px 4px;
+    /*background-color:#EEEEEE;*/
+}
+/*.alm:nth-child(odd){
+    background-color:#EEEEEE;
+}*/
+.almr {
+    margin-bottom: 3px;
+    margin-left: 1.5px;
+    margin-right: 1.5px;
+    margin-top: 3px;
+    border-radius: 4px 4px 4px 4px;
+    background-color: #BDC0BF;
+}
+
+.alm .col {
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+.butcol {
+    background-color: #EAE5DA;
+    /*border-radius:5px 5px 5px 5px;*/
+}
+
+.button-bar > .button {
+    border-radius: 4px 4px 4px 4px;
+}
+
+    .button-bar > .button:first-child {
+        border-radius: 4px 4px 4px 4px;
+    }
+
+    .button-bar > .button:last-child {
+        border-radius: 4px 4px 4px 4px;
+    }
+/*.alrm:nth-child(odd)
+{
+    background-color:#BDC0BF;
+}
+.alrm:nth-child(even)
+{
+    background-color:#FFFFFF;
+}*/
+
+.dataMT.ng-leave {
+    -webkit-transform-origin: 0% 0%;
+    -webkit-animation: rotateFall both ease-in;
+    -moz-transform-origin: 0% 0%;
+    -moz-animation: rotateFall both ease-in;
+    transform-origin: 0% 0%;
+    animation: rotateFall both ease-in;
+}
+
+.dataMT.ng-enter {
+    -webkit-animation: scaleUp 0.5s both ease-in;
+    -moz-animation: scaleUp 0.5s both ease-in;
+    animation: scaleUp 0.5s both ease-in;
+}
+
+/* scale up */
+@keyframes scaleUp {
+    from {
+        opacity: 0.1;
+        transform: scale(0.8);
+    }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.setting {
+    line-height: 22px;
+    min-width: 49px;
+    min-height: 38px;
+    margin: -2px;
+    padding: 5px;
+    border-radius: 4px 4px 4px 4px;
+}
+
+.bar .button {
+    padding: 1px;
+    margin: 1px;
+}
+
+.badge {
+    font-size: 11px;
+    line-height: 8px;
+    padding: 4px 4px;
+    min-width: 10px;
+    border-radius: 25px;
+}
+
+.button .badge {
+    position: relative;
+    top: -8px;
+}
+
+.status p {
+    color: black;
+}
+
+.alrm {
+    margin-left: 4px;
+    margin-right: -4px;
+    min-width: 34px;
+    color: red;
+}
+
+/*.blink {
+  animation: blinker 2s linear infinite;
+}
+@keyframes blinker {  
+ 0% { opacity: 0.0; }
+}*/
+
+
+/*.selectParent{
+    width:80px;
+    /*overflow:hidden;
+}*/
+
+/*.selectMT select{
+           text-indent: 1px;
+	font-weight:500;
+    font-size:32px;
+    width: 176px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    background: transparent url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat 120px center;
+}*/
+.modal {
+    display: none; /* Hidden by default */
+    position: center; /* Stay in place */
+    vertical-align: middle;
+    z-index: 1; /* Sit on top */
+    padding-top: 45px; /* Location of the box */
+    top: 0;
+    left: 0; /*bottom: 0; right: 0;*/
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0);
+    }
+
+    to {
+        -webkit-transform: scale(1);
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    color: #f1f1f1;
+    font-size: 45px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
